@@ -2,21 +2,34 @@ console.log('ok')
 
 const {createApp} = Vue;
 
-createApp(
+const app = createApp(
     {
         data() {
             return{
+                Mails: 0,
                 
 
             }
-        },
-        computed: {
-           
         },
         methods: {
             
             
         },
+        computed: {
+           
+        },
+        mounted(){
+
+        },
+        created(){
+            axios.get('https://flynn.boolean.careers/exercises/api/random/mail').then((response)=>{
+                console.log(response.data);
+            })
+
+        },
+       
 
     }
-).mount('#app')
+);
+app.mount('#app');
+
